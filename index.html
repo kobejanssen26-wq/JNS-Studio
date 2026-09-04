@@ -312,8 +312,8 @@
 
      Er staat rechtsonder een klein "Admin"-knopje. Daarop klikken vraagt om
      een wachtwoord (staat bij ADMIN_PASSWORD onderaan, standaard 29062026).
-     Bij het juiste wachtwoord verdwijnt de countdown blijvend voor jou
-     (onthouden in je browser) — handig om de site alvast te bekijken/bewerken.
+     Bij het juiste wachtwoord verdwijnt de countdown voor die paginabezoek —
+     bij een volgende keer openen moet je het wachtwoord opnieuw ingeven.
 
      Tip: #preview achteraan de URL (bv. index.html#preview) werkt ook,
      zonder wachtwoord, maar onthoudt niks voor de volgende keer.
@@ -617,18 +617,17 @@
   // PAS AAN: zet hier de echte datum en tijd waarop de site live gaat.
   // Formaat: 'JJJJ-MM-DDTUU:MM:00+02:00'  (+02:00 = Belgische zomertijd,
   // gebruik +01:00 in de winter)
-  const LAUNCH_DATE = new Date('2026-09-20T09:00:00+02:00');
+  const LAUNCH_DATE = new Date('2026-09-05T12:00:00+02:00');
 
   // PAS AAN: verander dit wachtwoord gerust naar iets van jezelf.
   const ADMIN_PASSWORD = '29062026';
-  const ADMIN_STORAGE_KEY = 'jns_admin_unlocked';
 
   (function(){
     const overlay = document.getElementById('coming-soon');
     if(!overlay) return;
 
     const skipPreview = window.location.hash === '#preview';
-    const unlocked = localStorage.getItem(ADMIN_STORAGE_KEY) === 'true';
+    let unlocked = false; // reset bij elke keer dat de pagina opnieuw laadt
     let timer;
 
     function render(){
@@ -669,7 +668,7 @@
         const input = window.prompt('Admin wachtwoord:');
         if(input === null) return;
         if(input === ADMIN_PASSWORD){
-          localStorage.setItem(ADMIN_STORAGE_KEY, 'true');
+          unlocked = true;
           overlay.style.display = 'none';
           if(timer) clearInterval(timer);
         } else {
