@@ -1,0 +1,13 @@
+# JNS Studio
+
+> JNS Studio bouwt maatwerkwebsites voor DJ's, clubs, evenementenbureaus en bedrijven. Opgericht door Kobe Janssens.
+
+JNS Studio is een freelance webdesign- en ontwikkelstudio uit België, gericht op twee soorten klanten: artiesten/nightlife (DJ's, clubs, evenementen) en bedrijven (MKB, horeca, dienstverleners). Diensten omvatten webdesign, development, bookingsites, webshops en onderhoud.
+
+## Pagina's
+
+- [Home](https://www.jns-studio.be/): overzicht van diensten, portfolio, werkwijze en contactgegevens.
+
+## Contact
+
+- E-mail: contact@jns-studio.be
